@@ -34,6 +34,7 @@ setup(
         'bcrypt',
         'commonmark',
 
+        'flask-jwt-extended>=4.0.0',
         'Flask-Login>0.4.1',
         'Keg>=0.8.6',
         'KegElements>=0.6.0',
@@ -51,7 +52,6 @@ setup(
             'email_validator',
             'flake8',
             'flask-bootstrap',
-            'flask-jwt-extended>=4.0.0',
             'flask-mail',
             'flask-oidc',
             'flask-webtest',
@@ -68,9 +68,6 @@ setup(
         'i18n': [
             'morphi',
             'webgrid[i18n]'
-        ],
-        'jwt': [
-            'flask-jwt-extended>=4.0.0',
         ],
         'ldap': [
             'python-ldap',

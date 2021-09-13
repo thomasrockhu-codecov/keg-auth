@@ -3,6 +3,7 @@ from urllib.parse import urljoin, urlparse
 
 import arrow
 import flask
+import flask_jwt_extended
 import flask_login
 import sqlalchemy as sa
 import string
@@ -15,11 +16,6 @@ from keg_auth import forms
 from keg_auth.extensions import flash, lazy_gettext as _
 from keg_auth.model import get_username_key, get_username
 from keg_auth.model.entity_registry import RegistryError
-
-try:
-    import flask_jwt_extended
-except ImportError:
-    pass  # pragma: no cover
 
 try:
     import ldap
@@ -914,9 +910,7 @@ class OidcAuthenticator(LoginAuthenticator):
 
 
 class JwtRequestLoader(TokenLoaderMixin, RequestLoader):
-    """ Loader for JWT tokens contained in the Authorization header.
-
-        Requires flask-jwt-extended (`pip install keg-auth[jwt]`)"""
+    """ Loader for JWT tokens contained in the Authorization header. """
     def __init__(self, app):
         super(JwtRequestLoader, self).__init__(app)
 

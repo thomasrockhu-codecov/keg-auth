@@ -91,6 +91,7 @@ class AuthManager(object):
         """Provide app config defaults for crypto, mail, logins, etc."""
         _cc_kwargs = dict(schemes=DEFAULT_CRYPTO_SCHEMES, deprecated='auto')
         app.config.setdefault('PASSLIB_CRYPTCONTEXT_KWARGS', _cc_kwargs)
+        app.config.setdefault('JWT_ALGORITHM', 'HS512')
 
         # config flag controls email ops such as sending verification emails, etc.
         # Note: model mixin must be in place for email

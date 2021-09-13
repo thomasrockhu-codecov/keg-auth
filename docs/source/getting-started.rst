@@ -9,9 +9,8 @@ Getting Started
 Installation
 ------------
 
-- Bare functionality: `pip install keg-auth`
+- Bare functionality, including JWT tokens as authenticators: `pip install keg-auth`
 - With mail (i.e. with a mail manager configured, see below): `pip install keg-auth[mail]`
-- JWT (for using JWT tokens as authenticators): `pip install keg-auth[jwt]`
 - LDAP (for using LDAP target for authentication): `pip install keg-auth[ldap]`
 - OIDC (for OAuth, e.g. Okta or Auth0): `pip install keg-auth[oidc]`
 - Internationalization extensions: `pip install keg-auth[i18n]`
@@ -150,7 +149,6 @@ data in the request, such as an authentication header.
 -  JWT:
 
     -  ``from keg_auth import JwtRequestLoader``
-    -  uses flask-jwt-extended, which needs to be installed: ``pip install keg-auth[jwt]``
 
 .. _gs-blueprint:
 
